@@ -23,20 +23,27 @@ python3 get_dropbox_token.py
 
 腳本會引導你完成 OAuth 授權並輸出 access token。
 
-### 步驟 2：在 iPhone 建立捷徑
+### 步驟 2：生成並匯入捷徑
 
-詳見 [docs/shortcut-steps.md](docs/shortcut-steps.md)
+執行以下腳本，輸入 token 後自動生成 `DropboxVideoUpload.shortcut` 檔案：
 
-將步驟 1 取得的 access token 填入捷徑中的 `YOUR_ACCESS_TOKEN` 位置。
+```bash
+python3 create_shortcut.py
+```
+
+再將生成的 `.shortcut` 檔 **AirDrop 到 iPhone**，點選「加入捷徑」即完成。
+
+> 也可手動建立捷徑，詳見 [docs/shortcut-steps.md](docs/shortcut-steps.md)
 
 ## 檔案說明
 
 ```
 ├── README.md                  # 本文件
 ├── get_dropbox_token.py       # 取得 Dropbox OAuth token 的輔助腳本
+├── create_shortcut.py         # 生成 .shortcut 檔案的腳本
 └── docs/
     ├── dropbox-app-setup.md   # 建立 Dropbox App 的步驟說明
-    └── shortcut-steps.md      # 在 iPhone 建立捷徑的逐步教學
+    └── shortcut-steps.md      # 手動建立捷徑的逐步教學
 ```
 
 ## 限制
